@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.gs {
+				white-space: pre;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 第一题 -->
+		<h1>第一题</h1>
+		<div id="first">
+			<input type="text" id="nr" value="" /><button type="button" class="tj" >添加</button><br>
+			  <ol class="list">
+			   
+			  </ol><br>
+			  <button type="button" class="qk">清空列表</button>
+		</div>
+		<!-- 第二题 -->
+		<h1>第二题</h1>
+		<div id="second">
+			<p>1.C 2.B 3.C 4.B 5.D 6.B 7.C 8.D 9.A 10.A</p>
+			<p>11.A 12.A 13.B 14.D 15.B 16.C 17.A 18.B 19.A 20.D</p>
+		</div>
+		<!-- 第三题 -->
+		<h1>第三题</h1>
+		<div id="third">
+			<xmp>
+				<?php
+					for($i=1; $i<=100; $i++){
+						echo $i.' ';
+					}
+				?>
+			</xmp>
+		</div>
+		<!-- 第四题 -->
+		<h1>第四题</h1>
+		<div id="fourth">
+			<xmp>
+				<?php
+					for($i=1; $i<=100; $i++){
+						if($i%2 == 0){
+							echo $i.' ';
+						}
+					}
+				?>
+			</xmp>
+		</div>
+		<!-- 第五题 -->
+		<h1>第五题</h1>
+		<div id="five">
+			<xmp>
+				<?php
+					for($i=1; $i<=100; $i++){
+							if($i%3 == 0){
+								echo 'foo'.' ';
+						}else if($i % 5 ==0){
+								echo 'bar'.' ';
+						}else if($i%3 == 0 && $i%5 == 0){
+								echo 'foobar'.' ';
+						}else {
+								echo $i.' ';	
+						}
+					}
+				?>
+			</xmp>
+		</div>
+		<!-- JS书写 -->
+		<script src="js/jquery.min.js"></script>
+		  <script>
+		  // let num=0
+		   $('.tj').click(function(){
+		    if(!$('#nr').val()){
+		     alert('还未填写内容')
+		    }else{
+		     // num++;
+		     $('.list').prepend(`<li><span class="one">X </span>${$('#nr').val()}</li>`);
+		     $('.one').click(function(){
+		      $(this).parent().remove()
+		     })
+		     $('#nr').val('')
+		    }
+		   })
+		   $('.qk').click(function(){
+		    $('.list').remove()
+		   })
+		  </script>
+	</body>
+</html>
